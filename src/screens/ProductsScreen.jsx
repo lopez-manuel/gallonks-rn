@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { ProductCard } from '../components/ProductCard';
 import {categorias} from '../data';
 
+
 export const ProductsScreen = ({navigation}) => {
 
     return (
@@ -18,6 +19,8 @@ export const ProductsScreen = ({navigation}) => {
                 </View>
             </ScrollView>
         </SafeAreaView>
+
+        
     )
 }
 
@@ -42,6 +45,9 @@ const styles = StyleSheet.create({
     },
     cardsContainer: {
         paddingVertical: 30,
-        flex: 1
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap:'wrap',
+        justifyContent: 'space-around'
     }
 })

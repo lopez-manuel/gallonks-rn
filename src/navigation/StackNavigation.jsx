@@ -13,7 +13,7 @@ export const StackNavigation = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen options={headerOptions} name="Home" component={MainScreen} />
-            <Stack.Screen options={headerOptions} name="Products" component={ProductsScreen} />
+            <Stack.Screen options={headerOptions} name="Products" component={Wings} />
             <Stack.Screen options={headerOptions} name="Alitas" component={Wings} />
         </Stack.Navigator>
     );

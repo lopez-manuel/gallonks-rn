@@ -1,6 +1,6 @@
 
 
-export const categorias = [
+export const cat = [
     {
         nombre: 'Alitas',
         imagen: require('../assets/alitas.jpg'),
@@ -19,7 +19,7 @@ export const categorias = [
 ];
 
 
-export const alitas = [
+export const categorias = [
     {
         titulo: '1/2 kg de alitas',
         precio: '110',
@@ -33,6 +33,34 @@ export const alitas = [
         cantida: 1,
         imagen: require('../assets/alitas.jpg'),
         id: '1alitas2'
+    },
+    {
+        titulo: '1/2 kg de boneless',
+        precio: '130',
+        cantida: 1,
+        imagen: require('../assets/boneless.jpg'),
+        id: '12boneless1'
+    },
+    {
+        titulo: '1 kg de boneless',
+        precio: '250',
+        cantida: 1,
+        imagen: require('../assets/boneless.jpg'),
+        id: '1boneless2'
+    },
+    {
+        titulo: 'Aros de cebolla',
+        precio: '60',
+        cantidad: 1,
+        imagen: require('../assets/aros.jpg'),
+        id: 'aros1'
+    },
+    {
+        titulo: 'Papas a la francesa',
+        precio: '60',
+        cantidad: 1,
+        imagen: require('../assets/papas.jpg'),
+        id: 'papas1'
     }
 ];
 
