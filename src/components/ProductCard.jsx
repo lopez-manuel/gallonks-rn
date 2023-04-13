@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //onPress={()=> navigation.navigate(`${categoria.nombre}`)}
 
 export const ProductCard = ({categoria, imagen, navigation}) => {
+
+    const handleAddToCart = async ( item ) => {
+
+        let cart = await AsyncStorage.getItem('cart') || [];
+
+        if(cart.length === 0){
+            await AsyncStorage.setItem( 'cart', JSON.stringify( [ item ] ) );
+            return;
+        }
+
+        cart = JSON.parse(cart);
+
+        const newCart = [ ...cart, item ];
+
+        await AsyncStorage.setItem( 'cart', JSON.stringify( newCart ) );
+
+    }
+
 
     return (
         <TouchableOpacity style={styles.contenedor} >
@@ -14,7 +33,7 @@ export const ProductCard = ({categoria, imagen, navigation}) => {
                     {categoria.titulo}
                 </Text>
                 <Text style={styles.precio}>${categoria.precio}.00</Text>
-                <TouchableOpacity style={styles.boton}>
+                <TouchableOpacity style={styles.boton} onPress={() => handleAddToCart( categoria )}>
                     <Text style={styles.botonText}>Agregar</Text>
                 </TouchableOpacity>
             </View>
